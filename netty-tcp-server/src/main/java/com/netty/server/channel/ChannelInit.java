@@ -1,5 +1,6 @@
 package com.netty.server.channel;
 
+import com.netty.server.decoder.MyDecoder;
 import com.netty.server.handler.MessageHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;
@@ -27,7 +28,8 @@ public class ChannelInit extends ChannelInitializer<SocketChannel> {
                 // 心跳时间
                 .addLast("idle", new IdleStateHandler(0, 0, 60, TimeUnit.SECONDS))
                 // 添加解码器
-                .addLast(new StringDecoder())
+                //.addLast(new StringDecoder())
+                .addLast(new MyDecoder())
                 // 添加编码器
                 .addLast(new StringEncoder())
                 // 添加消息处理器
