@@ -28,6 +28,7 @@ public class MessageHandler extends SimpleChannelInboundHandler<String> {
     protected void channelRead0(ChannelHandlerContext ctx, String message) throws Exception {
         log.debug("\n");
         log.debug("channelId:" + ctx.channel().id());
+        log.debug("收到消息:{}", message);
     }
 
     @Override

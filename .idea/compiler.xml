@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="com.springboot.upload" />
+        <module name="server" />
+        <module name="springboot-thymeleaf" />
+        <module name="consumer (2) (com.springcloud)" />
+        <module name="mybatis_generation" />
+        <module name="consumer (1) (com.springcloud)" />
+        <module name="demo" />
+        <module name="springboot-shiro" />
+        <module name="springboot-web (1) (com.springboot.cli)" />
+        <module name="server (2)" />
+        <module name="server-1" />
+        <module name="common" />
+        <module name="provider" />
+        <module name="springboot-web" />
+        <module name="springboot-web (1)" />
+        <module name="client" />
+        <module name="springboot-web (2) (com.springboot.cli)" />
+        <module name="springboot-async" />
+        <module name="server-2" />
+        <module name="common (1) (com.springcloud)" />
+        <module name="springboot-validator (2)" />
+        <module name="consumer" />
+        <module name="consumer (1)" />
+        <module name="springboot-validator (4)" />
+        <module name="springboot-shiro-jwt" />
+        <module name="springboot-email" />
+        <module name="springboot-scheduler" />
+        <module name="springboot-jwt" />
+        <module name="cli (1) (com.springboot)" />
+        <module name="springboot-druid" />
+        <module name="springboot-exception" />
+        <module name="protobuf-client" />
+        <module name="server (1)" />
+        <module name="springboot-redis" />
+        <module name="springboot-minio" />
+        <module name="springboot-validator" />
+        <module name="springboot-captcha" />
+        <module name="producer (1)" />
+        <module name="client (1)" />
+        <module name="springboot-elasticsearch" />
+        <module name="producer" />
+        <module name="springboot-validator (1)" />
+        <module name="springboot-redisson" />
+        <module name="springboot-validator (3)" />
+        <module name="provider (1)" />
+        <module name="mybatis-plus" />
+        <module name="gateway" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cli" target="1.8" />
+      <module name="cli (1) (com.springboot)" target="1.8" />
+      <module name="client" target="1.8" />
+      <module name="client (1)" target="1.8" />
+      <module name="com.springboot.upload" target="1.8" />
+      <module name="common" target="1.8" />
+      <module name="common (1) (com.springcloud)" target="1.8" />
+      <module name="consumer" target="1.8" />
+      <module name="consumer (1)" target="1.8" />
+      <module name="consumer (1) (com.springcloud)" target="1.8" />
+      <module name="consumer (2) (com.springcloud)" target="1.8" />
+      <module name="demo" target="10" />
+      <module name="gateway" target="1.8" />
+      <module name="gateway-demo" target="1.8" />
+      <module name="hystrix" target="1.8" />
+      <module name="mybatis-plus" target="1.8" />
+      <module name="mybatis_generation" target="1.8" />
+      <module name="producer" target="1.8" />
+      <module name="producer (1)" target="1.8" />
+      <module name="protobuf-client" target="1.8" />
+      <module name="provider" target="1.8" />
+      <module name="provider (1)" target="1.8" />
+      <module name="server" target="1.8" />
+      <module name="server (1)" target="1.8" />
+      <module name="server (2)" target="1.8" />
+      <module name="server-1" target="1.8" />
+      <module name="server-2" target="1.8" />
+      <module name="springboot-async" target="1.8" />
+      <module name="springboot-captcha" target="9" />
+      <module name="springboot-druid" target="1.8" />
+      <module name="springboot-elasticsearch" target="1.8" />
+      <module name="springboot-email" target="1.8" />
+      <module name="springboot-exception" target="1.8" />
+      <module name="springboot-jwt" target="9" />
+      <module name="springboot-kafka" target="1.8" />
+      <module name="springboot-minio" target="1.8" />
+      <module name="springboot-rabbitMQ" target="1.8" />
+      <module name="springboot-redis" target="1.8" />
+      <module name="springboot-redisson" target="1.8" />
+      <module name="springboot-scheduler" target="1.8" />
+      <module name="springboot-shiro" target="1.8" />
+      <module name="springboot-shiro-jwt" target="9" />
+      <module name="springboot-thymeleaf" target="1.8" />
+      <module name="springboot-validator" target="1.8" />
+      <module name="springboot-validator (1)" target="1.8" />
+      <module name="springboot-validator (2)" target="9" />
+      <module name="springboot-validator (3)" target="1.8" />
+      <module name="springboot-validator (4)" target="1.8" />
+      <module name="springboot-web" target="1.8" />
+      <module name="springboot-web (1)" target="1.8" />
+      <module name="springboot-web (1) (com.springboot.cli)" target="1.8" />
+      <module name="springboot-web (2) (com.springboot.cli)" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cli (1) (com.springboot)" options="-parameters" />
+      <module name="client" options="-parameters" />
+      <module name="client (1)" options="-parameters" />
+      <module name="com.springboot.upload" options="-parameters" />
+      <module name="common" options="-parameters" />
+      <module name="consumer" options="-parameters" />
+      <module name="consumer (1)" options="-parameters" />
+      <module name="demo" options="-parameters" />
+      <module name="mybatis-plus" options="-parameters" />
+      <module name="mybatis_generation" options="-parameters" />
+      <module name="producer" options="-parameters" />
+      <module name="producer (1)" options="-parameters" />
+      <module name="protobuf-client" options="-parameters" />
+      <module name="server" options="-parameters" />
+      <module name="server (1)" options="-parameters" />
+      <module name="server (2)" options="-parameters" />
+      <module name="springboot-async" options="-parameters" />
+      <module name="springboot-captcha" options="-parameters" />
+      <module name="springboot-druid" options="-parameters" />
+      <module name="springboot-elasticsearch" options="-parameters" />
+      <module name="springboot-email" options="-parameters" />
+      <module name="springboot-exception" options="-parameters" />
+      <module name="springboot-jwt" options="-parameters" />
+      <module name="springboot-minio" options="-parameters" />
+      <module name="springboot-redis" options="-parameters" />
+      <module name="springboot-redisson" options="-parameters" />
+      <module name="springboot-scheduler" options="-parameters" />
+      <module name="springboot-shiro" options="-parameters" />
+      <module name="springboot-shiro-jwt" options="-parameters" />
+      <module name="springboot-thymeleaf" options="-parameters" />
+      <module name="springboot-validator" options="-parameters" />
+      <module name="springboot-validator (1)" options="-parameters" />
+      <module name="springboot-validator (2)" options="-parameters" />
+      <module name="springboot-validator (3)" options="-parameters" />
+      <module name="springboot-validator (4)" options="-parameters" />
+      <module name="springboot-web" options="-parameters" />
+      <module name="springboot-web (1)" options="-parameters" />
+      <module name="springboot-web (1) (com.springboot.cli)" options="-parameters" />
+      <module name="springboot-web (2) (com.springboot.cli)" options="-parameters" />
+    </option>
+  </component>
+</project>

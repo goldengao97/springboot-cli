@@ -10,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import java.net.InetSocketAddress;
+
 
 /**
  * 消息处理,单例启动
@@ -31,8 +33,9 @@ public class MessageHandler extends SimpleChannelInboundHandler<String> {
         // 判断是否未登录
         if (!ChannelStore.isAuth(ctx)) {
             // 这里登录逻辑自行实现，我这里为了演示把第一次发送的消息作为客户端ID
-            String clientId = message.trim();
-            ChannelStore.bind(ctx, clientId);
+            InetSocketAddress ipSocket = (InetSocketAddress)ctx.channel().remoteAddress();
+            String clientId = ipSocket.getAddress() + ":" +ipSocket.getPort();
+            ChannelStore.bind(ctx, clientId.replace("/",""));
             log.debug("登录成功");
             ctx.writeAndFlush("login successfully");
             return;
@@ -47,6 +50,7 @@ public class MessageHandler extends SimpleChannelInboundHandler<String> {
      * @param clientId 其它已成功登录的客户端
      * @param message  消息
      */
+
     public void sendByClientId(String clientId, String message) {
         Channel channel = ChannelStore.getChannel(clientId);
         channel.writeAndFlush(message);

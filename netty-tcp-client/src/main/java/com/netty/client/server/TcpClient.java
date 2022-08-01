@@ -71,7 +71,7 @@ public class TcpClient implements ITcpClient {
     private void tcpClient() {
         try {
             bootstrap = new Bootstrap()
-                    .remoteAddress("127.0.0.1", clientProperties.getClientPort())
+                    .localAddress("127.0.0.1", clientProperties.getClientPort())
                     .handler(channelInit)
                     .channel(NioSocketChannel.class)
                     .option(ChannelOption.TCP_NODELAY, true);

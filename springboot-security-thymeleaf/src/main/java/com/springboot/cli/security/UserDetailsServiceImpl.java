@@ -33,7 +33,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
      * 账号 admin
      * 密码 123456
      */
-    private final static HashMap<String, MyUser> USER_MAP = new LinkedHashMap<>() {
+    private final static HashMap<String, MyUser> USER_MAP = new LinkedHashMap<String, MyUser>() {
         {
             put("admin", new MyUser()
                     .setUserId(1L)

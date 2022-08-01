@@ -9,9 +9,9 @@
         <relativePath/>
     </parent>
     <groupId>com.springboot</groupId>
-    <artifactId>springboot-web</artifactId>
+    <artifactId>springboot-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springboot-web</name>
+    <name>springboot-demo</name>
     <description>springboot-web</description>
     <properties>
         <java.version>11</java.version>

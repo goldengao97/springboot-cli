@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.springboot</groupId>
-    <artifactId>com.springboot.upload</artifactId>
+    <artifactId>springboot-upload</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springboot-upload</name>
     <description>Demo project for Spring Boot</description>

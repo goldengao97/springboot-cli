@@ -9,10 +9,10 @@
         <relativePath/>
     </parent>
     <groupId>com.springboot</groupId>
-    <artifactId>springboot-validator</artifactId>
+    <artifactId>springboot-security-captcha</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springboot-validator</name>
-    <description>springboot-validator</description>
+    <name>springboot-security-captcha</name>
+    <description>springboot-security-captcha</description>
     <properties>
         <java.version>11</java.version>
     </properties>

@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.netty</groupId>
-    <artifactId>protobuf-client</artifactId>
+    <artifactId>netty-protobuf-client</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>nettyClient</name>
+    <name>netty-protobuf-client</name>
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>11</java.version>

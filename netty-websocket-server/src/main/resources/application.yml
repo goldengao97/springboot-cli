@@ -6,7 +6,7 @@ spring:
 netty:
   server:
     host: 127.0.0.1
-    port: 20000
+    port: 10086
     use-epoll: false
 
 # 日记配置

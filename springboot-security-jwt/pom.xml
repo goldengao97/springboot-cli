@@ -9,10 +9,10 @@
         <relativePath/>
     </parent>
     <groupId>com.springboot</groupId>
-    <artifactId>springboot-validator</artifactId>
+    <artifactId>springboot-security-jwt</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springboot-validator</name>
-    <description>springboot-validator</description>
+    <name>springboot-security-jwt</name>
+    <description>springboot-security-jwt</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -61,6 +61,14 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>9</source>
+                    <target>9</target>
                 </configuration>
             </plugin>
         </plugins>

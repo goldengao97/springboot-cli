@@ -9,10 +9,10 @@
         <relativePath/>
     </parent>
     <groupId>com.springboot.cli</groupId>
-    <artifactId>springboot-web</artifactId>
+    <artifactId>springboot-swagger</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springboot-web</name>
-    <description>springboot-web</description>
+    <name>springboot-swagger</name>
+    <description>springboot-swagger</description>
     <properties>
         <java.version>11</java.version>
     </properties>

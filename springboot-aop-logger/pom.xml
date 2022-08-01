@@ -9,9 +9,9 @@
         <relativePath/>
     </parent>
     <groupId>com.springboot.cli</groupId>
-    <artifactId>springboot-web</artifactId>
+    <artifactId>springboot-aop-logger</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springboot-web</name>
+    <name>springboot-aop-logger</name>
     <description>springboot-web</description>
     <properties>
         <java.version>11</java.version>
