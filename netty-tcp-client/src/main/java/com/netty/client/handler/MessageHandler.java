@@ -3,8 +3,6 @@ package com.netty.client.handler;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-import io.netty.handler.codec.http.websocketx.PingWebSocketFrame;
-import io.netty.handler.codec.mqtt.MqttMessage;
 import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
 import lombok.RequiredArgsConstructor;
@@ -29,6 +27,9 @@ public class MessageHandler extends SimpleChannelInboundHandler<String> {
         log.debug("\n");
         log.debug("channelId:" + ctx.channel().id());
         log.debug("收到消息:{}", message);
+        if("01 05 00 00 FF 00 8C 3A".equals(message)) {
+            ctx.channel().writeAndFlush(message);
+        }
     }
 
     @Override

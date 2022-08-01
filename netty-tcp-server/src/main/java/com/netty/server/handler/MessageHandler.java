@@ -5,7 +5,6 @@ import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-import io.netty.handler.timeout.IdleStateEvent;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -23,25 +22,15 @@ import java.net.InetSocketAddress;
 @ChannelHandler.Sharable
 @RequiredArgsConstructor
 public class MessageHandler extends SimpleChannelInboundHandler<String> {
-
+    //int readIdleTimes = 0;
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, String message) throws Exception {
         log.debug("\n");
         log.debug("channelId:" + ctx.channel().id());
         log.debug("收到消息:{}", message);
-        // 判断是否未登录
-        if (!ChannelStore.isAuth(ctx)) {
-            // 这里登录逻辑自行实现，我这里为了演示把第一次发送的消息作为客户端ID
-            InetSocketAddress ipSocket = (InetSocketAddress)ctx.channel().remoteAddress();
-            String clientId = ipSocket.getAddress() + ":" +ipSocket.getPort();
-            ChannelStore.bind(ctx, clientId.replace("/",""));
-            log.debug("登录成功");
-            ctx.writeAndFlush("login successfully");
-            return;
-        }
         // 回复客户端
-        ctx.writeAndFlush("ok");
+        //ctx.writeAndFlush("ok");
     }
 
     /**
@@ -60,6 +49,7 @@ public class MessageHandler extends SimpleChannelInboundHandler<String> {
     public void channelInactive(ChannelHandlerContext ctx) {
         log.debug("\n");
         log.debug("断开连接");
+        GatewayService.removeGatewayChannelByClientId(ChannelStore.getClientId(ctx));
         ChannelStore.closeAndClean(ctx);
     }
 
@@ -67,11 +57,46 @@ public class MessageHandler extends SimpleChannelInboundHandler<String> {
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         log.debug("\n");
         log.debug("成功建立连接,channelId：{}", ctx.channel().id());
+        // 判断是否未登录
+        if (!ChannelStore.isAuth(ctx)) {
+            // 这里登录逻辑自行实现，我这里为了演示把第一次发送的消息作为客户端ID
+            InetSocketAddress ipSocket = (InetSocketAddress)ctx.channel().remoteAddress();
+            String clientId = String.valueOf(ipSocket.getAddress()).replace("/","") + ":" +ipSocket.getPort();
+            ChannelStore.bind(ctx, clientId);
+            GatewayService.addGatewayChannel(clientId,ctx.channel());
+            log.debug("登录成功");
+            ctx.writeAndFlush("login successfully");
+            return;
+        }
         super.channelActive(ctx);
     }
 
     @Override
     public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
         log.debug("心跳事件时触发");
+        /*IdleStateEvent event = (IdleStateEvent) evt;
+
+        String eventType = null;
+        switch (event.state()) {
+            case READER_IDLE:
+                eventType = "读空闲";
+                readIdleTimes++; // 读空闲的计数加1
+                break;
+            case WRITER_IDLE:
+                eventType = "写空闲";
+                // 不处理
+                break;
+            case ALL_IDLE:
+                eventType = "读写空闲";
+                // 不处理
+                break;
+        }
+
+        System.out.println(ctx.channel().remoteAddress() + "超时事件：" + eventType);
+        if (readIdleTimes > 3) {
+            System.out.println(" [server]读空闲超过3次，关闭连接，释放更多资源");
+            ctx.channel().writeAndFlush("idle close");
+            ctx.channel().close();
+        }*/
     }
 }

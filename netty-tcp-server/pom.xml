@@ -16,7 +16,7 @@
     <properties>
         <java.version>11</java.version>
         <netty-all.version>4.1.75.Final</netty-all.version>
-        <fastjson.version>1.2.80</fastjson.version>
+        <fastjson.version>2.0.7</fastjson.version>
     </properties>
     <dependencies>
         <dependency>
@@ -41,8 +41,8 @@
         </dependency>
         <!--   常用JSON工具包 -->
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
+            <groupId>com.alibaba.fastjson2</groupId>
+            <artifactId>fastjson2</artifactId>
             <version>${fastjson.version}</version>
         </dependency>
         <dependency>
