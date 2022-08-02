@@ -1,6 +1,6 @@
 package com.netty.server.decoder;
 
-import com.netty.server.util.Hex;
+import com.netty.server.utils.Hex;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;

@@ -1,4 +1,4 @@
-package com.netty.server.util;
+package com.netty.server.utils;
 
 
 public class Hex {

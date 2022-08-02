@@ -1,6 +1,7 @@
 package com.netty.server.handler;
 
 import com.netty.server.store.ChannelStore;
+import com.netty.server.utils.RedisUtils;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
@@ -29,6 +30,10 @@ public class MessageHandler extends SimpleChannelInboundHandler<String> {
         log.debug("\n");
         log.debug("channelId:" + ctx.channel().id());
         log.debug("收到消息:{}", message);
+        //TODO redis存客户端消息  根据message内容判断
+        if(message.contains("")) {
+            RedisUtils.save("", "");
+        }
         // 回复客户端
         //ctx.writeAndFlush("ok");
     }
@@ -59,13 +64,13 @@ public class MessageHandler extends SimpleChannelInboundHandler<String> {
         log.debug("成功建立连接,channelId：{}", ctx.channel().id());
         // 判断是否未登录
         if (!ChannelStore.isAuth(ctx)) {
-            // 这里登录逻辑自行实现，我这里为了演示把第一次发送的消息作为客户端ID
+            // 登录逻辑实现
             InetSocketAddress ipSocket = (InetSocketAddress)ctx.channel().remoteAddress();
             String clientId = String.valueOf(ipSocket.getAddress()).replace("/","") + ":" +ipSocket.getPort();
             ChannelStore.bind(ctx, clientId);
             GatewayService.addGatewayChannel(clientId,ctx.channel());
             log.debug("登录成功");
-            ctx.writeAndFlush("login successfully");
+            //ctx.writeAndFlush("login successfully");
             return;
         }
         super.channelActive(ctx);
